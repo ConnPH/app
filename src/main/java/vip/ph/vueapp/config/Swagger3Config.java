@@ -1,12 +1,15 @@
 package vip.ph.vueapp.config;
 
+import io.swagger.models.parameters.Parameter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.oas.annotations.EnableOpenApi;
+import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.AuthorizationScope;
 import springfox.documentation.service.Contact;
@@ -15,6 +18,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,6 +39,7 @@ public class Swagger3Config implements WebMvcConfigurer {
 
     @Bean
     public Docket createRestApi(){
+
         Docket build = new Docket(DocumentationType.OAS_30).pathMapping("/")
                 .groupName("胖虎")
                 .enable(swaggerProperties.getEnable())

@@ -1,15 +1,9 @@
 package vip.ph.vueapp.model;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 
 import java.util.Date;
-
-import com.baomidou.mybatisplus.annotation.Version;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableField;
 
 import java.io.Serializable;
 
@@ -84,7 +78,8 @@ public class SystemLog extends Model<SystemLog> {
     private Date gmtModified;
 
     @ApiModelProperty(value = "逻辑删除")
-    private String isDelete;
+    @TableLogic
+    private Integer isDelete;
 
 
     @Override

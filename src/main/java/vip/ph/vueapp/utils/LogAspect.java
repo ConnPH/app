@@ -157,7 +157,7 @@ public class LogAspect {
             systemExce.setExcepMessage(stackTraceToString(e.getClass().getName(), e.getMessage(), e.getStackTrace())); // 异常信息
             systemExce.setLogUrl(request.getRequestURI()); // 操作URI
             systemExce.setLogIp(IpUtil.getIpAddr(request)); // 操作员IP
-            systemExce.setVersion(version); // 操作版本号
+            systemExce.setLogVersion(version); // 操作版本号
             systemExce.setGmtCreate(new Date()); // 发生异常时间
             systemExceService.save(systemExce);
         } catch (Exception exception) {

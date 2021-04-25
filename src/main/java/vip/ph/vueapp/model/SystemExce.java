@@ -1,13 +1,8 @@
 package vip.ph.vueapp.model;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.util.Date;
-import com.baomidou.mybatisplus.annotation.Version;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -60,17 +55,20 @@ public class SystemExce extends Model<SystemExce> {
 
     @ApiModelProperty(value = "乐观锁")
     @Version
-    private String version;
+    private Integer version;
+
+    private String logVersion;
 
     @ApiModelProperty(value = "创建时间")
       @TableField(fill = FieldFill.INSERT)
     private Date gmtCreate;
 
     @ApiModelProperty(value = "逻辑删除")
-    private String isDelete;
+    @TableLogic
+    private Integer isDelete;
 
     @ApiModelProperty(value = "更新时间")
-    private Date gmtModefied;
+    private Date gmtModified;
 
 
     @Override

@@ -3,6 +3,7 @@ package vip.ph.vueapp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
 public class VueappApplication {
 

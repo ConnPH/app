@@ -11,4 +11,7 @@ public interface LogMethod {
     String UPDATE = "UPDATE";
     String DELETE = "DELETE";
     String INSERT = "INSERT";
+
+    String POST = "POST";
+    String GET = "GET";
 }

@@ -61,11 +61,10 @@ public class PlusGenerator {
 
         //4.策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("t_user","t_system_log","t_system_exce"); // 设置要映射的表名
+        strategy.setInclude("t_email_login"); // 设置要映射的表名
         strategy.setNaming(NamingStrategy.underline_to_camel);//设置命名规则，允许驼峰命名
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);//设置命名规则，允许列驼峰命名
         strategy.setEntityLombokModel(true); // 自动lombok；
-        strategy.setLogicDeleteFieldName("deleted");//设置逻辑删除的名字
         // 自动填充配置
         TableFill gmtCreate = new TableFill("gmt_create", FieldFill.INSERT);//设置自动填充创建时间
         TableFill gmtModified = new TableFill("gmt_modified",FieldFill.INSERT_UPDATE);//设置自动填充修改时间
@@ -76,7 +75,6 @@ public class PlusGenerator {
         // 乐观锁
         //生成的类名去掉前缀 如yw_sys_user ---> SysUser
         strategy.setTablePrefix("t_");
-        strategy.setVersionFieldName("version");
         strategy.setRestControllerStyle(true);//controller层使用rest风格
         strategy.setControllerMappingHyphenStyle(true); //localhost:8080/hello_id_2
         autoGenerator.setStrategy(strategy);

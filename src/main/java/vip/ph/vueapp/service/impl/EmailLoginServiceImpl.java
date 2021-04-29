@@ -3,7 +3,6 @@ package vip.ph.vueapp.service.impl;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.crypto.SecureUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import vip.ph.vueapp.model.EmailLogin;
 import vip.ph.vueapp.mapper.EmailLoginMapper;
 import vip.ph.vueapp.service.EmailLoginService;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 import vip.ph.vueapp.service.MailService;
 
 import javax.annotation.Resource;
-import java.security.Security;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -46,7 +44,7 @@ public class EmailLoginServiceImpl extends ServiceImpl<EmailLoginMapper, EmailLo
         emailLoginMapper.insertEmailLogin(emailLogin);
 
         //TODD 发送邮件功能
-        String activationUrl = "http:localhost/email-login/activation?token=" + emailLogin.getToken();
+        String activationUrl = "http://localhost/email-login/activationUrl?token=" + emailLogin.getToken();
         mailService.sendMailForActivationAccount(activationUrl,emailLogin.getEmail());
     }
 

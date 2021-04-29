@@ -48,11 +48,12 @@ public class MailServiceImpl implements MailService {
             Context context = new Context();
             context.setVariable("activationUrl",activationUrl);
             String engine = templateEngine.process("activationUrl.html", context);
-            message.setText(engine);
+            message.setText(engine,true);
         } catch (MessagingException e) {
             e.printStackTrace();
         }
 
+        javaMailSender.send(mimeMessage);
     }
 
 }

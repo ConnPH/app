@@ -35,6 +35,9 @@ public class SystemLogController {
     private SystemLogService systemLogService;
 
 
+
+
+
     @PostMapping("findSystemLogByPage/{currentPage}/{pageSize}")
     @Log(logModule = "系统日志管理AOP",logType = LogMethod.SELECT,logDesc = "分页查询日志信息")
     public Result findSystemLogByPage(@PathVariable("currentPage") int currentPage, @PathVariable("pageSize") int pageSize, SystemLogVo systemLogVo){

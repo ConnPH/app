@@ -65,7 +65,7 @@ public class SystemLog extends Model<SystemLog> {
 
     @ApiModelProperty(value = "乐观锁")
     @Version
-    private String version;
+    private Integer version;
 
     @ApiModelProperty(value = "乐观锁")
     private String logVersion;

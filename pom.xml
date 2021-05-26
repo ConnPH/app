@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.1.RELEASE</version>
+        <version>2.3.10.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>vip.ph</groupId>
@@ -60,8 +60,6 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.72</version>
         </dependency>
-
-
 
         <dependency>
             <groupId>com.github.axet</groupId>
